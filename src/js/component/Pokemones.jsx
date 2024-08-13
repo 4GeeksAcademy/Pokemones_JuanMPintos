@@ -24,7 +24,6 @@ export const Pokemones = () => {
         /*actualizamos el estado de la pagina*/
         setPokemones(data.results);
 
-        console.log(data)
 
     }
 
@@ -35,23 +34,11 @@ export const Pokemones = () => {
             <h1>Pokemones</h1>
             {
                 /*recorremos pokemones y obtenemos el name*/
-                pokemones.map((pokemones) => {
-                    return <p> {pokemones.name}</p>
-                })
-            }
-
-
-
-
-
-
-
-        </div>
-    )
-
-
-
-
-
-
-}
+                pokemones.map((pokemones, index) => {
+                    return (
+                        <Pokemones key={index} nombre={pokemones.name} url={pokemones.url} />)}
+                    )
+                }
+            </div>
+    );
+};
